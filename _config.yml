@@ -2,12 +2,92 @@
 title: 肉饼王国
 #email: your-email@domain.com
 description: # this means to ignore newlines until "baseurl:"
-  在电气学院学习光学的精密机械专业的毕业生是一名软件爱好者，现在在做电路设计工作。
+  在电气学院学习光学的精密机械专业的毕业生是一名软件爱好者，现在在从事电路设计工作。
   肉饼王的个人博客。
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://robincn.com" # the base hostname & protocol for your site
-#twitter_username: jekyllrb
-github_username:  RobinKing
+#url: "http://robincn.com" # the base hostname & protocol for your site
+url: "http://localhost:4000"
 
-# Build settings
-markdown: kramdown
+#disqus_shortname: neohpstrtheme # put your disqus here
+reading_time:     true # if true, shows the estimated reading time for a post
+words_per_minute: 200
+logo:             images/logo.png # logo visible in the topbar
+
+menu:
+  - title: '主页'
+    url: '/'
+  - title: '个人博客'
+    url: '/blog'
+#  - title: 'Tags'
+#    url: '/tags'
+  - title: 'Categories'
+    url: '/categories/'
+    type: 'categories'
+  - title: '关于我'
+    url: '/about'
+
+# Owner/author information
+owner:
+  name:           Robin King
+  site:           http://robincn.com
+  avatar:         images/avatar.jpg
+  bio:            "在电气学院学习光学的精密机械专业的毕业生是一名软件爱好者，现在在从事电路设计工作"
+  #email:          you@email.com
+  #twitter_username: jekyllrb
+  github_username:  RobinKing
+  # Social networking links used in author block underneath posts. Update and remove as you like.
+
+social:
+  - title: "github"
+    url: "https://github.com/RobinKing"
+  - title: "google"
+    url: "https://plus.google.com/+RobinGaryKing"
+# Background image to be tiled on all pages
+background:
+
+# Analytics and webmaster tools stuff goes here
+google_analytics: UA-73075387-1
+google_verify:
+# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
+bing_verify:
+
+
+# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone:    Asia/Shanghai
+locale:      zh_CN
+future:      true
+highlighter: pygments
+markdown:    kramdown
+gems:
+  - jekyll-sitemap
+  - jekyll-paginate
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# https://github.com/mojombo/jekyll/wiki/Permalinks
+permalink:   /:categories/:title/
+
+# Amount of post to show on home page
+paginate: 5
+
+# if true, shows the floatting share buttons
+float_share: true
+
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  #use_coderay: true
+  enable_coderay: true
+
+  coderay:
+    coderay_line_numbers: nil
+    coderay_line_numbers_start: 1
+    coderay_tab_width: 4
+    coderay_bold_every: 10
+    coderay_css: class
+
+include: [".htaccess"]
+exclude: ["lib", "config.rb", "Capfile", "config", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]
