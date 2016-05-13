@@ -56,7 +56,7 @@ bing_verify:
 timezone:    Asia/Shanghai
 locale:      zh_CN
 future:      true
-highlighter: pygments
+highlighter: rouge
 markdown:    kramdown
 gems:
   - jekyll-sitemap
