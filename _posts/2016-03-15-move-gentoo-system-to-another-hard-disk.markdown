@@ -2,7 +2,8 @@
 layout: post
 title:  "移动Gentoo到新硬盘"
 date:   2016-03-15 23:00:00
-categories: [Linux ,Gentoo]
+categories: [Computer Science]
+tags: [Linux ,Gentoo]
 ---
 ### 序：背景
 ******
@@ -114,4 +115,3 @@ sudo os-probe
 {% endhighlight %}
 
 尽情地在新硬盘里畅游吧～～～～～～～～～～～～
-

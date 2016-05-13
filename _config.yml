@@ -20,8 +20,8 @@ menu:
     url: '/blog'
   - title: '标签'
     url: '/tags/'
-    type: 'tags'
-  - title: '文章分类'
+#    type: 'tags'
+  - title: '分类浏览'
     url: '/categories/'
     type: 'categories'
   - title: '关于我'
@@ -67,7 +67,7 @@ sass:
   style: compressed
 
 # https://github.com/mojombo/jekyll/wiki/Permalinks
-permalink:   /:categories/:title/
+permalink:   /:categories/:title/:tags/
 
 # Amount of post to show on home page
 paginate: 5

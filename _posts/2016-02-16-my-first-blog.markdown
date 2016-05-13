@@ -2,7 +2,7 @@
 layout: post
 title:  "第一篇自己的blog"
 date:   2016-02-16 22:00:00
-categories: life
+categories: Life
 ---
 年结束了，今天回到洛阳了。
 

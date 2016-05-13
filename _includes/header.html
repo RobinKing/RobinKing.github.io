@@ -1,5 +1,7 @@
 {% capture site_cats %}{% for cat in site.categories %}{{ cat | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
 {% assign cats_list = site_cats | split:',' | sort %}
+{% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+{% assign tags_list = site_tags | split:',' | sort %}
 
 <div class="header-menu header-menu-top">
     <ul class="header-item-container">
@@ -35,6 +37,15 @@
               {% endfor %}
             </ul>
           </li>
+        {% elsif menu.type == 'tags' %}
+        <li class="header-item {{class}}"><a href="{{site.url}}{{menu.url}}"><h3>{{ menu.title }}</h3></a>
+          <ul class="header-submenu">
+            {% for item in (0..site.tags.size) %}{% unless forloop.last %}
+              {% capture this_word %}{{ tags_list[item] | strip_newlines }}{% endcapture %}
+                <li class="sub-item"><a href="/tags/#{{this_word}}">{{this_word}}</a></li>
+            {% endunless %}{% endfor %}
+          </ul>
+        </li>
         {% else %}
             {% if menu.url contains 'http://' or menu.url contains 'https://' %}
                 <li class="header-item {{class}}"><a href="{{menu.url}}" target="_blank"><h3>{{ menu.title }}</h3></a></li>
