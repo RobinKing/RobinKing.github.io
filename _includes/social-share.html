@@ -1,11 +1,14 @@
 <div class="social-share">
   <ul class="socialcount socialcount-small inline-list">
     {% if site.weibo_share %}
-    <li class="weibo"><a href="http://hits.sinajs.cn/A1/weiboshare.html?url={{ site.url }}{{ page.url }}&amp;type=icon&amp;{% if site.weibo_uid %}ralateUid={{ site.weibo_uid }}&amp;{% endif %}language=zh_cn" title="分享到微博"><span class="count"><i class="fa fa-weibo"></i> 分享</span></a></li>
+    <li class="weibo"><a href="javascript:void((function(s,d,e,r,l,p,t,z,c){var%20f='http://v.t.sina.com.cn/share/share.php?{% if site.weibo_uid %}appkey={{ site.weibo_uid }}{% endif %}',u=z||d.location,p=['&url=',e(u),'&title=',e(t||d.title),'&source=',e(r),'&sourceUrl=',e(l),'&content=',c||'gb2312','&pic=',e(p||'')].join('');function%20a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=440,height=430,left=',(s.width-440)/2,',top=',(s.height-430)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent))setTimeout(a,0);else%20a();})(screen,document,encodeURIComponent,'','','','分享一篇来自{{site.title}}的文章《{{page.title}}》','',''));" class="share_btn" title="分享到微博"><span class="count"><i class="fa fa-weibo"></i> 微博分享</span></a></li>
     {% endif %}
     <li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}" title="Share on Facebook"><span class="count"><i class="fa fa-facebook-square"></i> Like</span></a></li>
     <li class="twitter"><a href="https://twitter.com/intent/tweet?text={{ site.url }}{{ page.url }}" title="Share on Twitter"><span class="count"><i class="fa fa-twitter-square"></i> Tweet</span></a></li>
     <li class="googleplus"><a href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}" title="Share on Google Plus"><span class="count"><i class="fa fa-google-plus-square"></i> +1</span></a></li>
-    <!-- <li class="weibo"><wb:share-button appkey="1009204924" addition="simple" type="icon"></wb:share-button></li> -->
+    <!--
+    <li class="weibo"><a href="http://service.weibo.com/staticjs/weibosharev2.html?url={{ site.url }}{{ page.url }}&amp;type=icon&amp;language=zh_cn&amp;{% if site.weibo_uid %}appkey={{ site.weibo_uid }}&amp;{% endif %}style=simple" target="weibo">link</a>
+    <li class="weibo"><wb:share-button appkey="1009204924" addition="simple" type="icon"></wb:share-button></li>
+    -->
   </ul>
 </div><!-- /.social-share -->
