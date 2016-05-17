@@ -19,7 +19,13 @@
 </script>
 {% endif %}
 
-{% if page.comments != false %}{% include disqus_comments.html %}{% endif %}
+{% if page.comments != false %}
+  {% if site.disqus_shortname %}
+    {% include disqus_comments.html %}
+  {% elsif  site.duoshuo_shortname %}
+    {% include duoshuo_comments.html %}
+  {% endif %}
+{% endif %}
 
 {% if site.float_share %}
 <script type="text/javascript">
