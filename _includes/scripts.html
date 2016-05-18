@@ -20,11 +20,8 @@
 {% endif %}
 
 {% if page.comments != false %}
-  {% if site.disqus_shortname %}
-    {% include disqus_comments.html %}
-  {% elsif  site.duoshuo_shortname %}
-    {% include duoshuo_comments.html %}
-  {% endif %}
+  {% include disqus_comments.html %}
+  {% include duoshuo_comments.html %}
 {% endif %}
 
 {% if site.float_share %}
