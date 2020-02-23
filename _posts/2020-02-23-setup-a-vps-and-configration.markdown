@@ -13,7 +13,7 @@ tags:   [Life, Vultr, CentOS]
 
 想起来之前的评论系统也没整，还有个cn域名也没用，就想着整个vps自建一个静态blog。。。
 
-# 购买VPS并进行基本设置
+## 购买VPS并进行基本设置
 
 其实profit也是够用了，不过眼瞅着快到期了，就想着换一个试试。对比了多家之后选择了Vultr的小VPS，首充送了50美刀，但是只有一个月的有效期，所以干脆买了一堆不同地方的VPS，测试完再删吧。
 
@@ -21,7 +21,7 @@ VPS的具体购买方式网上有很多教程了，各大主机厂商也提供�
 
 Vultr官方提供了很多镜像选择，开始的适合还是和之前一样选择了FreeBSD，后来发现他们家有CenOS 8的官方镜像，就体验了下新版，由于笔记记得都是CentOS下的操作，所以以下介绍都按照CentOS 8来。
 
-1. 修改密码并更新系统
+### 1. 修改密码并更新系统
 
 VPS建好之后，用控制面板带的Console登录root账户，进行初步设置。
 
@@ -33,7 +33,7 @@ passwd
 yum update
 ```
 
-2. 初步设置SSH并添加常用普通用户
+### 2. 初步设置SSH并添加常用普通用户
 
 更新完系统后就要进行ssh设置以便客户端登录操作了，具体步骤如下：
 
@@ -80,7 +80,7 @@ visudo
 # 允许wheel用户组以root身份运行所有命令
 %wheel ALL=(ALL)
 ```
-3. 上传SSH公钥并完善SSH设置
+### 3. 上传SSH公钥并完善SSH设置
 
 上述设置完成后，即可从客户端上传公钥文件,并用ssh方式登录服务器。
 
@@ -105,7 +105,7 @@ systemctl restart sshd
 
 到这里服务器初步设置就基本完成了，之后的所有步骤都从客户端完成。
 
-# 其他设置
+## 其他设置
 
 **再次提醒** 以下的所有操作均在客户端完成，ssh登录方式如下：
 
@@ -113,7 +113,7 @@ systemctl restart sshd
 ssh  -i .ssh/xxx.pub king@SERVER_IP_ADDRESS -p SSH_PORT_NUMBER
 ```
 
-1. 安装fail2ban
+### 1. 安装fail2ban
 安装fail2ban并设置把一切尝试ssh登录错的都给禁半天。
 
 ```Shell
@@ -145,7 +145,7 @@ sudo systemctl start fail2ban
 sudo systemctl enable fail2ban
 ```
 
-2. ~~安装代理软件并设置~~
+### 2. ~~安装代理软件并设置~~
 
 该部分笔记都有记录，不便于发表在blog中，概述如下：
 
@@ -165,7 +165,7 @@ sudo systemctl start YOURSERVICE
 sudo systemctl enable YOURSERVICE
 ```
 
-3. 添加BBR支持
+### 3. 添加BBR支持
 
 具体是啥可自行Google，不过Vultr的CenOS 8默认已经开啦。就从之前的笔记粘贴过来啦。
 
@@ -207,7 +207,7 @@ lsmod | grep bbr
 tcp_bbr xxxx xx
 ```
 
-# 后记
+## 后记
 
 此次VPS设置设置说了个七七八八，就当是个记录吧。还有在VPS部署Git服务器等部分笔记，整理整理回头再发吧。。。
 
