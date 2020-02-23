@@ -5,7 +5,7 @@ description: # this means to ignore newlines until "baseurl:"
   在电气学院学习光学的精密机械专业的毕业生是一名软件爱好者，现在在从事电路设计工作。
   肉饼王的个人博客。
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://robincn.com" # the base hostname & protocol for your site
+url: "http://robinking.cn"  # robincn.com" # the base hostname & protocol for your site
 #url: "http://localhost:4000"
 
 #disqus_shortname: neohpstrtheme # put your disqus here
