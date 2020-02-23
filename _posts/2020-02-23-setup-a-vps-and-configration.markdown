@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "新建VPS并进行一些设置"
-date:   2019-02-23 13:22:21
+date:   2020-02-23 13:22:21
 categories: [Life, Computer Science]
 tags:   [Life, Vultr, CentOS]
 ---
