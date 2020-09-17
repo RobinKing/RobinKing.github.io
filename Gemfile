@@ -5,3 +5,4 @@ gem "jekyll", ">= 3.7.4"
 gem 'jekyll-paginate'
 gem "pygments.rb"
 gem "rubyzip", ">= 1.2.2"
+gem "kramdown", ">= 2.3.0"
