@@ -259,6 +259,7 @@ DEPENDENCIES
   jekyll (>= 3.7.4)
   jekyll-paginate
   kramdown (>= 2.3.0)
+  kramdown-parser-gfm
   nokogiri (>= 1.10.4)
   pygments.rb
   rubyzip (>= 1.2.2)
