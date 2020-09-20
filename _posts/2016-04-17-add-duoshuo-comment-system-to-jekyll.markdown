@@ -5,6 +5,9 @@ date:   2016-05-17 16:22:21
 categories: [Computer Science]
 tags:   jekyll
 ---
+## 已经作废
+
+
 ### 序：背景
 jekyll默认使用disqus评论系统，支持的很多帐号并不适合国内使用。在俺大天朝，当然要用有本地特色的disqus了。哈哈哈～～
 国内本土化的评论系统有很多，我大概瞄了一下[多说](http://duoshuo.com/)和[友言](http://www.uyan.cc/)，然后就随便选了一个(多说)～～

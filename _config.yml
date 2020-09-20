@@ -91,9 +91,13 @@ kramdown:
   #enable_coderay: true
   syntax_highlighter: rouge
   syntax_highlighter_opts:
-    line_numbers: nil
-    line_numbers_start: 1
-    tab_width: 4
+    css_class: 'monokai'
+    span:
+      line_numbers: false
+    block:
+      line_numbers: false
+      line_numbers_start: 1
+      tab_width: 4
     bold_every: 10
     css: css
 

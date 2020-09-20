@@ -8,7 +8,7 @@ tags:   [Life, WSL2, ssh]
 
 最近从WSL切换到WSL2之后发现无法ssh到VPS。
 使用```-vv```选项查看，发现最后挂起前提示：
-``` Shell
+``` shell
 debug2: channel 0: open confirm rwindow 0 rmax 32768
 ```
 然后Google了一下，发现这其实是路由器的问题。
@@ -21,7 +21,7 @@ debug2: channel 0: open confirm rwindow 0 rmax 32768
 
 长期方式就是修改配置文件，修改```~/.ssh/config```或者```/etc/ssh/ssh_config```都行。
 
-```Vim
+```vim
 # vim /etc/ssh/ssh_config
 Host *
   IPQoS 0x00

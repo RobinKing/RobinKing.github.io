@@ -25,7 +25,7 @@ Vultr官方提供了很多镜像选择，开始的适合还是和之前一样选
 
 VPS建好之后，用控制面板带的Console登录root账户，进行初步设置。
 
-```Shell
+```shell
 # Change root passwd
 passwd
 
@@ -37,12 +37,12 @@ yum update
 
 更新完系统后就要进行ssh设置以便客户端登录操作了，具体步骤如下：
 
-```Shell
+```shell
 vim /etc/ssh/sshd_config
 ```
 首先修改了一部分配置。
 
-```Vim
+```vim
 # /etc/ssh/sshd_config
 Port SSH_PORT_NUMBER  # 修改默认ssh端口
 PermitRootLogin no # 禁止root用户登录
@@ -50,7 +50,7 @@ PermitRootLogin no # 禁止root用户登录
 
 **注意** 修改端口号后需要修改对应的防火墙设置。
 
-```Shell
+```shell
 # SELinux 设置
 semanage port -a -t ssh_port_t -p tcp SSH_PORT_NUMBER #SSH_PORT_NUMBER是上一步设置的ssh端口号
 # firewall 设置
@@ -63,7 +63,7 @@ systemctl restart sshd  #restart ssh server
 
 然后添加一个普通用户并设置密码。CentOS的adduser居然和useradd是一样的，囧，还是“小恶魔”的adduser好用 - -
 
-```Shell
+```shell
 # 添加用户king并添加到wheel组中
 useradd king -G wheel -U
 passwd king
@@ -71,12 +71,12 @@ passwd king
 
 由于禁止了root通过ssh登录，所以可以安装sudo以便刚才添加的用户进行日常维护。（此步骤不是必须的）
 
-```Shell
+```shell
 yum install sudo
 visudo
 ```
 参照文件注释编辑sudo的配置文件
-```Vim
+```vim
 # 允许wheel用户组以root身份运行所有命令
 %wheel ALL=(ALL)
 ```
@@ -84,7 +84,7 @@ visudo
 
 上述设置完成后，即可从客户端上传公钥文件,并用ssh方式登录服务器。
 
-```Shell
+```shell
 # 上传公钥文件
 ssh-copy-id -i .ssh/xxx.pub king@SERVER_IP_ADDRESS -p SSH_PORT_NUMBER
 # ssh登录至服务器
@@ -92,14 +92,14 @@ ssh  -i .ssh/xxx.pub king@SERVER_IP_ADDRESS -p SSH_PORT_NUMBER
 
 上述测试成功后，即可禁用密码登录，并关闭浏览器管理面板登录的Console。
 
-```Vim
+```vim
 # /etc/ssh/sshd_config
 # 禁用密码登录
 PasswordAuthentication no
 ```
 不放心密钥的可将ssh登录方式改为密钥+密码，然后重启ssh服务即可。
 
-```Shell
+```shell
 systemctl restart sshd
 ```
 
@@ -109,21 +109,21 @@ systemctl restart sshd
 
 **再次提醒** 以下的所有操作均在客户端完成，ssh登录方式如下：
 
-```Shell
+```shell
 ssh  -i .ssh/xxx.pub king@SERVER_IP_ADDRESS -p SSH_PORT_NUMBER
 ```
 
 ### 1. 安装fail2ban
 安装fail2ban并设置把一切尝试ssh登录错的都给禁半天。
 
-```Shell
+```shell
 sudo yum install -y epel-release
 # 安装fail2ban
 sudo yum install fail2ban
 # 修改fail2ban设置
 sudo vim /etc/fail2ban/jail.local
 ```
-```Vim
+```vim
 # /etc/fail2ban/jail.local
 [DEFAULT]
 # Ban hosts for 12 hour:
@@ -156,7 +156,7 @@ sudo systemctl enable fail2ban
 + 创建自启动服务（需要修改**\*.service文件中的User等字段，和ExecStart等）
 + 添加防火墙规则
 
-```Shell
+```shell
 # Update firewall rule
 firewall-cmd --zone=public --add-port=xxx1-xxx3/tcp --permanent
 firewall-cmd --zone=public --add-port=xxx1-xxx3/udp --permanent
@@ -171,7 +171,7 @@ sudo systemctl enable YOURSERVICE
 
 开启BBR详细步骤如下，如果内核版本低于4.9需要更新内核，不想编译的添加源就行，老Gentoo用户表示不想多说什么了，哈哈
 
-```Shell
+```shell
 uname -r
 # 版本号低于4.9需要更新内核并重启
 sudo rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
@@ -184,7 +184,7 @@ sudo reboot
 
 版本号高于4.9的可直接开启，具体步骤如下：
 
-```Shell
+```shell
 # sudo echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
 echo 'net.core.default_qdisc=fq' | sudo tee -a /etc/sysctl.conf
 # sudo echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf
@@ -193,7 +193,7 @@ sudo sysctl -p
 ```
 
 测试一下吧
-```Shell
+```shell
 sudo sysctl net.ipv4.tcp_available_congestion_control
 # output should be:
 net.ipv4.tcp_available_congestion_control = reno cubic bbr
