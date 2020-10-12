@@ -33,5 +33,6 @@ exclude = kernel* mysql*  # 自动更新排除的软件包
 编辑完成后，启用服务以使自动更新生效。
 ```bash
 sudo systemctl start yum-cron
+sudo systemctl enable yum-cron
 ```
 
