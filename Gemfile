@@ -1,5 +1,5 @@
 source 'https://gems.ruby-china.com/'
-gem "nokogiri", ">= 1.10.4"
+gem "nokogiri", ">= 1.11.0"
 gem 'github-pages'
 gem "jekyll", ">= 3.7.4"
 gem 'jekyll-paginate'
