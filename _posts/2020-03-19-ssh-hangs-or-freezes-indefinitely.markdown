@@ -2,13 +2,13 @@
 layout: post
 title:  "ssh挂起的解决办法"
 date:   2020-03-19 22:15:00
-categories: [Computer Science]
-tags:   [Life, WSL2, ssh]
+categories: [WSL]
+tags:   [Lifelong learning, WSL2, ssh]
 ---
 
 最近从WSL切换到WSL2之后发现无法ssh到VPS。
 使用```-vv```选项查看，发现最后挂起前提示：
-``` shell
+```bash
 debug2: channel 0: open confirm rwindow 0 rmax 32768
 ```
 然后Google了一下，发现这其实是路由器的问题。

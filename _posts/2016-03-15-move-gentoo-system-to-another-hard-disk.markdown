@@ -2,8 +2,8 @@
 layout: post
 title:  "移动Gentoo到新硬盘"
 date:   2016-03-15 23:00:00
-categories: [Computer Science]
-tags: [Linux ,Gentoo]
+categories: [Linux]
+tags: [Life, Linux ,Gentoo]
 ---
 ### 序：背景
 ******

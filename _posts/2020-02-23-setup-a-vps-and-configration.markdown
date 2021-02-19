@@ -2,8 +2,8 @@
 layout: post
 title:  "新建VPS并进行一些设置"
 date:   2020-02-23 13:22:21
-categories: [Life, Computer Science]
-tags:   [Life, Vultr, CentOS]
+categories: [Linux, VPS]
+tags:   [Lifelong learning, Vultr, CentOS, VPS, Linux]
 ---
 今年过了一个难忘的年。。。
 

@@ -2,8 +2,8 @@
 layout: post
 title:  "使用yum-cron自动更新CentOS系统"
 date:  2020-10-07 22:25:47
-categories: [Computer Science]
-tags:  [VPS, Linux, CentOS]
+categories: [Linux]
+tags:  [VPS, Linux, CentOS, yum]
 ---
 
 之前（大约十年前还在读书时）因为经常更新系统所以手写过crontab文件以实现自动更新。

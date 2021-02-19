@@ -3,7 +3,7 @@ layout: post
 title:  "测试GitHub图床功能"
 date:   2019-01-23 23:22:21
 categories: [Life]
-tags:   [Life]
+tags:   [Lifelong learning]
 ---
 最近工作还是很忙碌的，晚上回来之后就想折腾一会。发现国内的多说、友言之类都已经挂了，搜索过程中看到有人在用GitHub Issue 搭建评论系统，简直是人才啊。看着看着就看到用GitHub作图床的blog了。想到前几天GitHub 对个人用户功能扩容，想来微软爸爸也是不差钱的，用GitHub作图床也不是不行啊，今天建了个Repo测试一下。
 
