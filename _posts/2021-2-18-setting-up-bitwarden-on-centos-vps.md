@@ -35,33 +35,32 @@ sudo yum remove docker \
 
 可自行选择一种方式安装，我选择设置 repository 的方式。
 
-1. 首先设置源。
+- 首先设置源。
 
 ```shell
 sudo yum-config-manager \
     --add-repo \
     https://download.docker.com/linux/centos/docker-ce.repo
 ```
-
-2. 安装
+- 安装
 
 ```shell
 sudo yum install docker-ce docker-ce-cli containerd.io
 ```
 
-3. 启动
+- 启动
 
 ```shell
 sudo systemctl start docker
 ```
 
-4. 测试
+- 测试
 
 ```shell
 sudo docker run hello-world
 ```
 
-5. 添加用户到 `docker` 组
+- 添加用户到 `docker` 组
 
 ```shell
 sudo gpasswd -a king docker
@@ -126,6 +125,13 @@ acme.sh --install-cert --nginx -d bitwarden.robincn.com --key-file /etc/nginx/bi
         ssl_ciphers PROFILE=SYSTEM;
         ssl_prefer_server_ciphers on;
         ssl_protocols TLSv1.1 TLSv1.2 TLSv1.3;
+
+        proxy_intercept_errors on;  # for error page render
+        large_client_header_buffers 2 2k;   # 解决 Android 客户端同步问题
+
+        # 解决网页加载问题
+        gzip off;
+        proxy_max_temp_file_size 0;
 
         client_max_body_size 128M;
 
@@ -237,7 +243,7 @@ services:
                         LOG_FILE: "/data/bitwarden.log"
                         WEBSOCKET_ENABLED: "true"
                         SIGNUPS_ALLOWED: "false"  # 关闭用户注册 
-						WEB_VAULT_ENABLED: "false"  # 关闭浏览器访问
+                        WEB_VAULT_ENABLED: "false"  # 关闭浏览器访问
                         DOMAIN: "https://bitwarden.robincn.com"
 ```
 
