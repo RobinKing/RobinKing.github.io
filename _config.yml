@@ -42,8 +42,8 @@ owner:
 social:
   - title: "github"
     url: "https://github.com/RobinKing"
-  - title: "google"
-    url: "https://plus.google.com/+RobinGaryKing"
+  #- title: "google"
+  #  url: "https://plus.google.com/+RobinGaryKing"
 # Background image to be tiled on all pages
 background:
 
