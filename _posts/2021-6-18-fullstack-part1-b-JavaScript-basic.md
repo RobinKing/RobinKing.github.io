@@ -16,7 +16,7 @@ JavaScript标准的正式名称是`ECMAScript`。由于浏览器不能支持所�
 
 `Node.js`是基于谷歌的 chrome V8 引擎的`JavaScript`运行时环境。代码文件以 *.js*结尾，通过 `node filename.js` 命令运行文件。
 
-## 变量[Variables]
+## 变量(Variables)
 
 在JavaScript中有以下几种定义变量的方法:
 
