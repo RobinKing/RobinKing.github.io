@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "全栈开发从入门到放弃:0-Web应用的基本介绍在"
+title:  "全栈开发从入门到放弃:0-Web应用的基本介绍"
 date:   2021-06-14 22:25:00
 categories: FullStack
 tags:   [React, 全栈开发, 学习笔记]
