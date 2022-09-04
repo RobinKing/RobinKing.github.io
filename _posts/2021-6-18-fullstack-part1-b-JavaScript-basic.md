@@ -79,7 +79,7 @@ console.log(m2)
 
 ```javascript
 const t = [1, 2, 3, 4, 5]
-const [first, second, ...rest] = 5
+const [first, second, ...rest] = t
 console.log(first, second)
 console.log(rest)
 ```
