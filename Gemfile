@@ -1,4 +1,4 @@
-source 'https://gems.ruby-china.com/'
+source 'https://rubygems.org/'
 gem "nokogiri", ">= 1.11.0"
 gem 'github-pages'
 gem "jekyll", ">= 3.7.4"
